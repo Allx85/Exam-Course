@@ -11,7 +11,7 @@ EOF
 echo "Enabled: no" >> /etc/apt/sources.list.d/pve-enterprise.sources
 echo "Enabled: no" >> /etc/apt/sources.list.d/ceph.soruces
 
-apt update -y && apt upgrade -y
+apt install parted -y
 
 DISK=/dev/sda
 # Skapa en partition på exakt 200 GiB från första lediga sektor
