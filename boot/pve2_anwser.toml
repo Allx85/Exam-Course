@@ -17,3 +17,7 @@ filter.ID_NET_NAME_MAC = "*"
 filesystem = "ext4"
 disk-list = ["sda"]
 lvm.hdsize = 200
+
+[first-boot]
+source = "from-iso"
+ordering = "fully-up"
