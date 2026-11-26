@@ -1,5 +1,5 @@
 [global]
-keyboard = "sv-se"
+keyboard = "se"
 country = "se"
 fqdn = "pve1.virt.lab"
 mailto = "root@lab.local"
@@ -17,7 +17,3 @@ filter.ID_NET_NAME_MAC = "*"
 filesystem = "ext4"
 disk-list = ["sda"]
 lvm.hdsize = 200
-
-[first-boot]
-source = "from-iso"
-ordering = "fully-up"
