@@ -9,10 +9,13 @@ Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
 EOF
 
 echo "Enabled: no" >> /etc/apt/sources.list.d/pve-enterprise.sources
+echo "Enabled: no" >> /etc/apt/sources.list.d/ceph.soruces
+
+apt update -y && apt upgrade -y
 
 DISK=/dev/sda
 # Skapa en partition på exakt 200 GiB från första lediga sektor
 sgdisk -n 0:0:+200G -t 0:8300 -c 0:ceph-osd $DISK
-udevadm settle
+partprobe $DISK
 
 exit 0
