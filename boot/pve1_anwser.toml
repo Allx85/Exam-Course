@@ -1,0 +1,23 @@
+[global]
+keyboard = "sv-se"
+country = "se"
+fqdn = "pve1.virt.lab"
+mailto = "root@lab.local"
+timezone = "Europe/Stockholm"
+root-password = "Linux4Ever"
+
+[network]
+source = "from-answer"
+cidr = "10.6.67.220/24"
+gateway = "10.6.67.1"
+dns = "10.6.67.2"
+filter.ID_NET_NAME_MAC = "*"
+
+[disk-setup]
+filesystem = "ext4"
+disk-list = ["sda"]
+lvm.hdsize = 200
+
+[first-boot]
+source = "from-iso"
+ordering = "fully-up"
