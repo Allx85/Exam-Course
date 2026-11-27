@@ -1,19 +1,20 @@
 #!/bin/bash
-qm create 101 \
+qm create 201 \
   --name alpine-web01 \
   --memory 2048 \
   --cores 2 \
   --cpu host \
   --net0 virtio,bridge=vmbr0 \
   --scsihw virtio-scsi-pci \
-  --scsi0 ceph-storage:20 \
-  --ide2 ceph-storage:cloudinit \
+  --ide0 local:iso/alpine.iso,media=cdrom \
+  --scsi0 pvepool:20 \
+  --ide2 pvepool:cloudinit \
   --boot order=scsi0 \
   --serial0 socket \
   --vga serial0 \
   --agent enabled=1
 
-  qm set --ciuser administrator \
+  qm set 201 --ciuser administrator \
   --sshkeys /root/authorized_keys \
   --cipassword "p" \
   --ipconfig0 ip=10.6.67.223/24,gw=10.6.67.1 \
