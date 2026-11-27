@@ -15,7 +15,7 @@ qm create 201 \
   --agent enabled=1
 
   qm set 201 --ciuser administrator \
-  --sshkeys /root/authorized_keys \
+  --sshkeys /root/.ssh/authorized_keys \
   --cipassword "p" \
   --ipconfig0 ip=10.6.67.223/24,gw=10.6.67.1 \
   --nameserver 10.6.67.223 \
