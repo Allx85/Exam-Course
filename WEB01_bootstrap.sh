@@ -9,7 +9,7 @@ qm create 201 \
   --ide0 local:iso/alpine.iso,media=cdrom \
   --scsi0 pvepool:20 \
   --ide2 pvepool:cloudinit \
-  --boot order=scsi0 \
+  --boot order=ide0 \
   --serial0 socket \
   --vga serial0 \
   --agent enabled=1
@@ -18,5 +18,5 @@ qm create 201 \
   --sshkeys /root/.ssh/authorized_keys \
   --cipassword "p" \
   --ipconfig0 ip=10.6.67.223/24,gw=10.6.67.1 \
-  --nameserver 10.6.67.223 \
+  --nameserver 10.6.67.2 \
   --searchdomain example.local
