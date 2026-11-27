@@ -14,6 +14,8 @@ Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
 EOF
 
 echo "Enabled: no" >> /etc/apt/sources.list.d/pve-enterprise.sources
+echo "Enabled: no" >> /etc/apt/sources.list.d/ceph.sources
+
 
 DISK=/dev/sda
 sgdisk -n 0:0:+200G -t 0:8300 -c 0:ceph-osd $DISK
